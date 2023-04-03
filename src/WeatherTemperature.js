@@ -21,7 +21,7 @@ if (unit === "fahrenheit") {
     let celsius= (props.fahrenheit - 32) * 5/9;
    return (
         <div className="WeatherTemperature">
-        <span className="temperature">{Math.round(props.fahrenheit)}</span>
+        <span className="temperature">{Math.round(props.celsius)}</span>
       <span className="unit"><a href="/" onClick={convertToFahrenheit}>°F</a> | °C</span>
        </div>
     );
