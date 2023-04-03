@@ -2,60 +2,45 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./App.css";
 import FormattedDate from "./FormattedDate";
+import "./Weather.css";
 
 
 export default function Weather() {
-  const [city, setCity] = useState("");
-  const [weather, setWeather] = useState("");
-
-  function handleSubmit(event) {
-    event.preventDefault();
-    let apiKey = "717511f5e1c0dbfc617f361ab073e2e9";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
-    axios.get(apiUrl).then(showTemperature);
-  }
-
-  function updateCity(event) {
-    setCity(event.target.value);
-  }
-
-  function showTemperature(response) {
-    console.log(response);
-
-    setWeather({
-      date: new Date(response.data.dt*1000),
-      temperature: response.data.main.temp,
-      description: response.data.weather[0].description,
-      humidity: response.data.main.humidity,
-      wind: response.data.wind.speed,
-      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-    });
-  }
-
-  return (
+return (
     <div className="Weather">
-      <div className="container">
-      <form onSubmit={handleSubmit}>
-        <input
-          type="search"
-          placeholder="Type a city..."
-          onChange={updateCity}
-        />
-        <input type="submit" value="Search" className="btn btn-primary" />
-      
-      </form>
-      {weather ? (
+        <form>
+            <div className="row">  
+            <div className="col-9">
+            <input type="search" placeholder="Enter a city..." className="form-control" />
+            </div>
+            <div className="col-3">
+            <input type="submit" value="Search" className="btn btn-primary" />
+       </div>
+       </div> 
+       </form>
+<h1>New York</h1>
+<ul>
+    <li>Sunday 22:00</li>
+    <li>Clear</li>
+    </ul>
+    <div className="row">
+        <div className="col-6">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAAUhJREFUeNrt230NgzAQh2GkIAUJyJgMJCABCZNQKcxBHdyOpFkyEkYGV9oL75Lff2Rwz8pXe2tEpLlzGgAAAAAAAAAAYHsDg4+8Hp1m0ATNrJGNzGmbZdvOZN+lAFLRkyb+KHgvMX1H5wYgFR5OFL2VcATiMgA9uFbzzFD4Oss+2qoA9ID6k0P9yKnRVwGgBzJeWPg6Y1GAdIGSwpmKAFRS/C5CFoDCw/6v08EcIF3wpNL0WQHSrS5WDBDXt0hrgGfFxX+eE7IApCc8cZIuB0BwBBBMAZz9+l+jwApgcggwWQJEhwDRBMDp8P+cBhYAg2OAwQIgOAYIFgCzY4DZAkBcB4C7AywvcIwAAADgNsiDEI/CvAzxOsyECFNiTIoyLc7CCEtjLI6yPE6DBC0yNEnRJkejJK2yNEvTLs8fJgAAAAAAAADg1nkDlR7XfJiH1ggAAAAASUVORK5CYII=" alt="Clear" />
+      46°F
+      </div>
+      <div className="col-6">
         <ul>
-          <li><FormattedDate date={weather.date} /></li>
-          <li>Temperature: {Math.round(weather.temperature)}°F</li>
-          <li>Description: {weather.description}</li>
-          <li>Humidity: {weather.humidity}%</li>
-          <li>Wind: {Math.round(weather.wind)} mph</li>
-
-          <img alt="icon" src={weather.icon} />
+            <li>Precipitation: 0% </li>
+            <li>Humidity: 25%</li>
+            <li>Wind: 5 mph</li>
         </ul>
-      ) : null}
+        </div>
     </div>
+    
+
+
     </div>
-  );
+)
+
+  ;
 }

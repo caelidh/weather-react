@@ -4,9 +4,10 @@ import Weather from "./Weather";
 function App() {
   return (
     <div className="App">
-      <h1>Weather App</h1>
+      <div className="container">
       <Weather />
-      <footer>This project was coded by Caelidh Liddell and is open-sourced on <a href="https://github.com/caelidh/weather-react">Github</a></footer>
+      <footer>This project was coded by Caelidh Liddell and is open-sourced on <a href="https://github.com/caelidh/weather-react" target="_blank">Github</a></footer>
+    </div>
     </div>
   );
 }
