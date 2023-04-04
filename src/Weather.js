@@ -42,7 +42,7 @@ function search() {
     if (weatherData.ready) {
 return (
     <div className="Weather">
-        <form onSumbit={handleSubmit}> 
+        <form onSubmit={handleSubmit}> 
             <div className="row">  
             <div className="col-9">
             <input type="search" placeholder="Enter a city..." className="form-control" autoFocus="on" onChange={handleCityChange} />
