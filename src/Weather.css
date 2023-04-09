@@ -37,7 +37,7 @@
     line-height: 64px;
 }
 
-Weather .unit {
+.Weather .unit {
     font-size: 16px;
     position: relative;
     line-height: 1;
