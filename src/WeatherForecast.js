@@ -33,14 +33,14 @@ return (
         </div>
     </div>
 );    
-    } else {
-    let apiKey = "717511f5e1c0dbfc617f361ab073e2e9";
-    let longitude = props.coordinates.lon;
-    let latitude = props.coordinates.lat;
-    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=imperial`;
+    }  else {
+        let apiKey = "5863935ee9cca4c02ed68203f807c65b";
+        let longitude = props.coordinates.lon;
+        let latitude = props.coordinates.lat;
+        let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=imperial`;
+        console.log(apiUrl);
+        axios.get(apiUrl).then(handleResponse);
     
-    axios.get(apiUrl).then(handleResponse);  
-
-   return null; 
-} 
+        return null;
+      }
 }
