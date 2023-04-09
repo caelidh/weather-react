@@ -30,6 +30,7 @@ function day () {
 </div>
 <div className="WeatherForecast-temperatures">
 <span className="WeatherForecast-temperatures-max">{maxTemperature()}</span>
+{" "}
 <span className="WeatherForecast-temperatures-min">{minTemperature()}</span>
 </div>
 </div>
